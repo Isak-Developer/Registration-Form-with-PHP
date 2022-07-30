@@ -2,10 +2,11 @@
 include 'connect.php';
 if (isset($_POST['submit'])){
   $username =$_POST['user-name'];
-  $email =$_POST['email'];
+  // $email =$_POST['email'];
   $password =$_POST['password'];
 
-  $sql = "insert into `login_users` (username, email, password) values ('$username', '$email', '$password')";
+  // $sql = "insert into `login_users` (username, email, password) values ('$username', '$email', '$password')";
+  $sql = "insert into `users` (username, password) values ('$username', '$password')";
 
   $result = mysqli_query($connection, $sql);
 
@@ -36,11 +37,6 @@ if (isset($_POST['submit'])){
         <div class="form-group">
           <label>User Name</label>
           <input type="text" id="user-name" name='user-name' class="form-control" />
-        </div>
-
-        <div class="form-group mt-4">
-              <label>Email</label>
-              <input type="email" id="user-name" name='email' class="form-control" />
         </div>
 
         <div class="form-group mt-4 ">
